@@ -3,8 +3,8 @@ import {
   DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-} from 'typeorm';
-import { Role } from '../../common/enums/rol.enum';
+} from "typeorm";
+import { Role } from "../../common/enums/rol.enum";
 
 @Entity()
 export class User {
@@ -14,13 +14,16 @@ export class User {
   @Column()
   name: string;
 
+  @Column()
+  user: string;
+
   @Column({ unique: true, nullable: false })
   email: string;
 
   @Column({ nullable: false, select: false })
   password: string;
 
-  @Column({ type: 'enum', default: Role.USER, enum: Role })
+  @Column({ type: "enum", default: Role.USER, enum: Role })
   role: Role;
 
   @DeleteDateColumn()

@@ -1,4 +1,4 @@
 export interface UserActiveInterface {
-  email: string;
+  user: string;
   role: string;
 }

@@ -1,29 +1,29 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
+import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { CreateUserDto } from "./dto/create-user.dto";
+import { UpdateUserDto } from "./dto/update-user.dto";
+import { User } from "./entities/user.entity";
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private readonly userRepository: Repository<User>,
+    private readonly userRepository: Repository<User>
   ) {}
 
   create(createUserDto: CreateUserDto) {
     return this.userRepository.save(createUserDto);
   }
 
-  findOneByEmail(email: string) {
-    return this.userRepository.findOneBy({ email });
+  findOneByUser(user: string) {
+    return this.userRepository.findOneBy({ user });
   }
 
-  findByEmailWithPassword(email: string) {
+  findByUserWithPassword(user: string) {
     return this.userRepository.findOne({
-      where: { email },
-      select: ['id', 'name', 'email', 'password', 'role'],
+      where: { user },
+      select: ["id", "name", "email", "user", "password", "role"],
     });
   }
 
