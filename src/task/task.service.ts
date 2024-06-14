@@ -12,7 +12,7 @@ export class TaskService {
     private readonly taskRepository: Repository<Task>
   ) {}
 
-  async create(createTaskDto: CreateTaskDto) {
+  async create(createTaskDto: CreateTaskDto, file: Express.Multer.File) {
     return await this.taskRepository.save(createTaskDto);
   }
 
