@@ -35,8 +35,19 @@ $ yarn install
 ## Running the app
 
 ```bash
+
+# Crear la base de datos
+$ docker-compose up
+
+# Install dependencies
+$ yarn install
+
 # development
 $ yarn run start
+
+# Cargar los enpoints en postman
+  nextline.postman_collection.json
+
 
 # watch mode
 $ yarn run start:dev

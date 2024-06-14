@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "4cad5dca-92fb-4638-829a-771f5c23264c",
+		"name": "nextline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2148819"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "CreateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGl0by5wZXJlekBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODMzNzg3MiwiZXhwIjoxNzE4NDI0MjcyfQ.eKMoT38kMmr5WNO7AvQj0B9HbzfyZpgKbgfqW-sbW_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"titulo\": \"1234567890\",\n    \"descripcion\": \"tito.perez@gmail.com\",\n    \"status\": \"tito.perez@gmail.com\",\n    \"fechaEntrega\": \"2022-03-06T11:00:00.000Z\",\n    \"comentarios\": \"tito.perez@gmail.com\",\n    \"creadoPor\": 1,\n    \"tag\": \"tito.perez@gmail.com\",\n    \"file\": \"tito.perez@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/task/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGl0by5wZXJlekBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODMzNzg3MiwiZXhwIjoxNzE4NDI0MjcyfQ.eKMoT38kMmr5WNO7AvQj0B9HbzfyZpgKbgfqW-sbW_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"titulo\": \"1234567890\",\n    \"descripcion\": \"tito.perez@gmail.com\",\n    \"status\": \"tito.perez@gmail.com\",\n    \"fechaEntrega\": \"2022-03-06T11:00:00.000Z\",\n    \"comentarios\": \"tito.perez@gmail.com\",\n    \"creadoPor\": 1,\n    \"tag\": \"tito.perez@gmail.com\",\n    \"file\": \"tito.perez@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGl0by5wZXJlekBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODMzNzg3MiwiZXhwIjoxNzE4NDI0MjcyfQ.eKMoT38kMmr5WNO7AvQj0B9HbzfyZpgKbgfqW-sbW_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"titulo\": \"1234567890\",\n    \"descripcion\": \"tito.perez@gmail.com\",\n    \"status\": \"tito.perez@gmail.com\",\n    \"fechaEntrega\": \"2022-03-06T11:00:00.000Z\",\n    \"comentarios\": \"tito.perez@gmail.com\",\n    \"creadoPor\": 1,\n    \"tag\": \"tito.perez@gmail.com\",\n    \"file\": \"tito.perez@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/task",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGl0by5wZXJlekBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODMzNzg3MiwiZXhwIjoxNzE4NDI0MjcyfQ.eKMoT38kMmr5WNO7AvQj0B9HbzfyZpgKbgfqW-sbW_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"titulo\": \"1234567890\",\n    \"descripcion\": \"tito.perez@gmail.com\",\n    \"status\": \"tito.perez@gmail.com\",\n    \"fechaEntrega\": \"2022-03-06T11:00:00.000Z\",\n    \"comentarios\": \"tito.perez@gmail.com\",\n    \"creadoPor\": 1,\n    \"tag\": \"tito.perez@gmail.com\",\n    \"file\": \"tito.perez@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGl0by5wZXJlekBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODMzNzg3MiwiZXhwIjoxNzE4NDI0MjcyfQ.eKMoT38kMmr5WNO7AvQj0B9HbzfyZpgKbgfqW-sbW_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"titulo\": \"1234567890\",\n    \"descripcion\": \"tito.perez@gmail.com\",\n    \"status\": \"tito.perez@gmail.com\",\n    \"fechaEntrega\": \"2022-03-06T11:00:00.000Z\",\n    \"comentarios\": \"tito.perez@gmail.com\",\n    \"creadoPor\": 1,\n    \"tag\": \"tito.perez@gmail.com\",\n    \"file\": \"tito.perez@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tito Perez\",\n    \"email\": \"tito.perez@gmail.com\",\n    \"user\": \"tito.perez@gmail.com\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"user\": \"tito.perez@gmail.com\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
