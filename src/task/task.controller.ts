@@ -17,7 +17,17 @@ import { Role } from "src/common/enums/rol.enum";
 import { ActiveUser } from "src/common/decorators/active-user.decorator";
 import { UserActiveInterface } from "src/common/interfaces/user-active.interface";
 import { FileUpload } from "src/common/decorators/file-upload.decorator";
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from "@nestjs/swagger";
 
+@ApiTags("task")
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: "Unauthorized Bearer Auth",
+})
 @Auth(Role.USER)
 @Controller("task")
 export class TaskController {
