@@ -10,13 +10,21 @@ import {
 import { TaskService } from "./task.service";
 import { CreateTaskDto } from "./dto/create-task.dto";
 import { UpdateTaskDto } from "./dto/update-task.dto";
+import { Auth } from "src/auth/decorators/auth.decorator";
+import { Role } from "src/common/enums/rol.enum";
+import { ActiveUser } from "src/common/decorators/active-user.decorator";
+import { UserActiveInterface } from "src/common/interfaces/user-active.interface";
 
+@Auth(Role.USER)
 @Controller("task")
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
-  @Post()
-  create(@Body() createTaskDto: CreateTaskDto) {
+  @Post("create")
+  create(
+    @Body() createTaskDto: CreateTaskDto,
+    @ActiveUser() user: UserActiveInterface
+  ) {
     return this.taskService.create(createTaskDto);
   }
 
